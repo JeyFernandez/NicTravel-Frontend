@@ -8,8 +8,8 @@ const SignInForm = (): JSX.Element => {
   return(
     <View style={styles.container}>
       <CustomText text='Acceder' type='heading2' />
-      <Input placeHolder="correo electrónico o usuario" />
-      <Input placeHolder="contraseña" />
+      <Input placeHolder="correo electrónico o usuario" inputType='email' />
+      <Input placeHolder="contraseña" inputType='password' />
       <Button title='Acceder' type='medium' />
     </View>
   );

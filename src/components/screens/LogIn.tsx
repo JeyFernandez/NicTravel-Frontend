@@ -1,5 +1,7 @@
-import { View, Image, Button, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import SignInForm from "../organisms/SignInForm";
+
+import Button from "../molecules/Button";
 
 interface Props {
   navigation: any
@@ -11,8 +13,9 @@ const LogIn = ({ navigation }: Props): JSX.Element => {
       <Image source={require('../../../assets/logo.png')} />
       <SignInForm />
       <Button 
-        title="Ir al inicio" 
-        onPress={() => navigation.navigate('Home')} 
+        type="link" 
+        title="Ir al Inicio" 
+        onClick={() => navigation.navigate('Home')}  
       />
     </View>
   );
