@@ -6,7 +6,7 @@ import LogIn from "../components/screens/LogIn";
 
 const Stack = createNativeStackNavigator();
 
-const MainStack = () => {
+const MainStack = () => { 
   return(
     <NavigationContainer>
       <Stack.Navigator>
