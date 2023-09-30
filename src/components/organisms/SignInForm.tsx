@@ -1,4 +1,5 @@
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Text, } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 
 import CustomText from "../atoms/CustomText";
@@ -27,10 +28,11 @@ const SignInForm = (): JSX.Element => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button
-            title='Acceder'
-            type='meddium'
-          />
+            <Button
+              title='Acceder'
+              type='meddium'
+              onClick={handleButtonClick}
+            />
         </View>
 
       </View>

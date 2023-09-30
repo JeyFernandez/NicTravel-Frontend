@@ -15,7 +15,7 @@ const LogIn = ({ navigation }: Props): JSX.Element => {
       <Button 
         type="link" 
         title="Explora NicTravel"
-        onClick={() => navigation.navigate('Register')}  
+        onClick={() => navigation.navigate('Home')}
       />
     </View>
   );
