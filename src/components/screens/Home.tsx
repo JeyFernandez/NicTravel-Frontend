@@ -39,10 +39,12 @@ const Home = (): JSX.Element => {
 
       <ScrollView horizontal style={styles.categoryScrollView}>
         {data.map((item, index) => (
-          <View key={index} style={styles.categoryContainer}>
-            <Image source={{ uri: item.image }} style={styles.categoryImage} />
-            <Text style={styles.categoryText}>{item.name}</Text>
-          </View>
+          <TouchableOpacity key={index} style={styles.categoryContainer}>
+            <View style={styles.card}>
+              <Image source={{ uri: item.image }} style={styles.categoryImage} />
+              <Text style={styles.categoryText}>{item.name}</Text>
+            </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </ScrollView>
@@ -107,6 +109,21 @@ const styles = StyleSheet.create({
   categoryContainer: {
     marginRight: 20,
     alignItems: "center",
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   categoryImage: {
     width: 150,
