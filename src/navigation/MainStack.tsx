@@ -18,12 +18,15 @@ const MainStack = () => {
             headerShown: false
           }}
         />
-        
-        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen 
+          name="Register" 
+          component={Register} 
+          options={{
+            headerShown: false
+          }}
+        />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
-      
-
     </NavigationContainer>
   );
 }

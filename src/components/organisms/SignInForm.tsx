@@ -1,42 +1,34 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, } from 'react-native';
-import { useNavigation } from "@react-navigation/native";
 
 import CustomText from "../atoms/CustomText";
 import Input from "../atoms/Input";
 import Button from "../molecules/Button";
 
-const SignInForm = (): JSX.Element => {
-  const navigation = useNavigation();
+interface Props {
+  navigation: any
+}
 
-  const handleButtonClick = () => {
-    navigation.navigate("Register");
-  };
-
+const SignInForm = ({ navigation }: Props): JSX.Element => {
   return (
     <View style={styles.container}>
+
       <CustomText text='Acceder' type='heading2' />
       <Input placeHolder="correo electrónico o usuario" inputType='email' />
       <Input placeHolder="contraseña" inputType='password' />
 
-      <View style={styles.acceder}>
-
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleButtonClick}>
-            <Text style={styles.buttonText}>Registrarme</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.buttonContainer}>
-            <Button
-              title='Acceder'
-              type='meddium'
-              onClick={handleButtonClick}
-            />
-        </View>
-
+      <View style={styles.buttonsWrapper}>
+        <Button
+          title='Registrarme'
+          type='link'
+          onClick={() => {navigation.navigate('Register')}}
+        />
+        <Button
+          title='Acceder'
+          type='meddium'
+          onClick={() => { }}
+        />
       </View>
-
     </View>
   );
 }
@@ -44,18 +36,13 @@ const SignInForm = (): JSX.Element => {
 export default SignInForm;
 
 const styles = StyleSheet.create({
-  acceder: {
+  buttonsWrapper: {
+    width: '100%',
+    paddingRight: 10,
+    paddingLeft: 10,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
-  },
-  buttonContainer: {
-    marginHorizontal: 10,
-  },
-
-  buttonText: {
-    fontSize: 16,
-    fontWeight: "bold",
   },
 
   container: {

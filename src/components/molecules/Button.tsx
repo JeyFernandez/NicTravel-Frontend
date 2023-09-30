@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 
   },
   meddium: {
-    width: 180,
+    width: 130,
     height: 48,
     justifyContent: 'center',
     alignItems: 'center',
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
 
   },
   link: {
-
+    height: 48,
+    width: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });

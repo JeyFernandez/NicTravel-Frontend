@@ -5,19 +5,22 @@ import Button from "../molecules/Button";
 
 
 const SignRegister = (): JSX.Element => {
+
   const handleButtonClick = () => {
   };
 
   return(
     <View style={styles.container}>
       <CustomText text='Registrarme' type='heading2' />
-      <Input placeHolder="usuario" inputType='email' />
+      <Input placeHolder="usuario" inputType='text' />
       <Input placeHolder="correo electrónico o usuario" inputType='email' />
-      <Input placeHolder="confirmar contraseña" inputType='password' />
       <Input placeHolder="contraseña" inputType='password' />
+      <Input placeHolder="confirmar contraseña" inputType='password' />
       <Button
-       title='Registarme'
-       type='meddium' />
+        title='Registarme'
+        type='meddium' 
+        onClick={() => handleButtonClick()}
+      />
     </View>
   );
 }
