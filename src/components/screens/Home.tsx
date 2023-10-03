@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import NavBar from "../organisms/NavBar";
 
 const data = [
   { name: "Hoteles", image: "https://laverdadnoticias.com/__export/1585620552106/sites/laverdad/img/2020/03/30/clalasificacion_hoteles_2.jpg_1834093470.jpg" },
@@ -13,48 +14,62 @@ const Home = (): JSX.Element => {
   };
 
   return (
-    <ScrollView
-     style={styles.container}>
-      <View style={styles.searchSection}>
-        <TextInput
-          placeholder="Buscar en NicTravel"
-          style={styles.searchInput}
-          placeholderTextColor="gray"
-        />
-        
-        <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
-          <AntDesign name="search1" size={24} color="gray" />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.suggestionsContainer}>
-        <View style={styles.suggestionsText}>
-          <Text style={styles.boldText}>Sugerencias</Text>
+    <View style={styles.mainContainer}>
+      <ScrollView
+        style={styles.container}
+      >
+        <View style={styles.searchSection}>
+          <TextInput
+            placeholder="Buscar en NicTravel"
+            style={styles.searchInput}
+            placeholderTextColor="gray"
+          />
+          
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
+            <AntDesign name="search1" size={24} color="gray" />
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.seeAllText} onPress={() => console.log("Ver todo presionado")}>
-          <Text style={styles.greenText}>Ver todo</Text>
-          <AntDesign name="right" size={18} color="green" />
-        </TouchableOpacity>
-      </View>
 
-      <ScrollView horizontal style={styles.categoryScrollView}>
-        {data.map((item, index) => (
-          <View key={index} style={styles.categoryContainer}>
-            <Image source={{ uri: item.image }} style={styles.categoryImage} />
-            <Text style={styles.categoryText}>{item.name}</Text>
+        <View style={styles.suggestionsContainer}>
+          <View style={styles.suggestionsText}>
+            <Text style={styles.boldText}>Sugerencias</Text>
           </View>
-        ))}
+          <TouchableOpacity style={styles.seeAllText} onPress={() => console.log("Ver todo presionado")}>
+            <Text style={styles.greenText}>Ver todo</Text>
+            <AntDesign name="right" size={18} color="green" />
+          </TouchableOpacity>
+        </View>
+
+        <ScrollView horizontal style={styles.categoryScrollView}>
+          {data.map((item, index) => (
+            <View key={index} style={styles.categoryContainer}>
+              <Image source={{ uri: item.image }} style={styles.categoryImage} />
+              <Text style={styles.categoryText}>{item.name}</Text>
+            </View>
+          ))}
+        </ScrollView>
+        
+
       </ScrollView>
-    </ScrollView>
+      <NavBar />
+    </View>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
+    //borderWidth: 4,
+    //borderColor: 'red',
     flex: 1,
+  },
+  container: {
+    //flex: 1,
     padding: 20,
+
+    //backgroundColor: 'skyblue',
+    //borderWidth: 5,
   },
   searchSection: {
     flexDirection: "row",
