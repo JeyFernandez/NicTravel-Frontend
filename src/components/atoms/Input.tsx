@@ -1,14 +1,17 @@
 import { TextInput, StyleSheet } from "react-native";
 
 type inputProp = {
-  placeHolder: string
+  placeHolder: string,
+  inputType: string,
 }
 
-const Input = ({ placeHolder }: inputProp): JSX.Element => {
+const Input = ({ placeHolder, inputType }: inputProp): JSX.Element => {
   return(
     <TextInput 
       placeholder={placeHolder} 
       style={styles.inputStyles}
+      secureTextEntry={inputType === 'password' ? true : false}
+      keyboardType={inputType === 'email' ? 'email-address' : 'default'}
     />
   );
 }
@@ -18,7 +21,7 @@ export default Input;
 const styles = StyleSheet.create({
   inputStyles: {
     width: 300,
-    height: 40,
+    height: 54,
     paddingLeft: 10,
     paddingRight: 10,
     borderRadius: 10,

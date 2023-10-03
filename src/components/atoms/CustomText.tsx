@@ -5,11 +5,6 @@ type TextProps = {
   text: string;
 };
 
-/*Text types:
-Heading1, Heading2
-Body1, Body2
-Link*/
-
 const CustomText = ({ type, text }: TextProps): JSX.Element => {
 
   const textStyle = styles[type];

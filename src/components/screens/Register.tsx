@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet } from "react-native";
-import SignInForm from "../organisms/SignInForm";
+import SignRegister from "../organisms/SingRegister";
 
 import Button from "../molecules/Button";
 
@@ -7,21 +7,16 @@ interface Props {
   navigation: any
 }
 
-const LogIn = ({ navigation }: Props): JSX.Element => {
+const Register = ({ navigation }: Props): JSX.Element => {
   return(
     <View style={styles.container}>
       <Image source={require('../../../assets/logo.png')} />
-      <SignInForm />
-      <Button 
-        type="link" 
-        title="Explora NicTravel"
-        onClick={() => navigation.navigate('Home')}
-      />
+      <SignRegister />
     </View>
   );
 }
 
-export default LogIn;
+export default Register;
 
 const styles = StyleSheet.create({
   container: {
