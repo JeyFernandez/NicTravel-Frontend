@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { dataSugerencias } from "../data/sugerencias";
+import NavBar from "../organisms/NavBar";
 
 const Home = (): JSX.Element => {
   
@@ -62,6 +63,14 @@ export default Home;
 
 const styles = StyleSheet.create({
   mainContainer: {
+
+    //borderWidth: 4,
+    //borderColor: 'red',
+    flex: 1,
+    
+  },
+  container: {
+
     flex: 1,
     marginTop: 30,
   },
@@ -78,12 +87,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: 10,
-    shadowColor: 'black',
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 1,
     },
-    shadowOpacity: 0.20,
+    shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
     paddingHorizontal: 10,
@@ -123,19 +132,20 @@ const styles = StyleSheet.create({
   categoryContainer: {
     alignItems: "center",
   },
-  card: {
-    backgroundColor: 'white',
+
+  card:  {
+    backgroundColor: "white",
     borderRadius: 10,
     margin: 10,
     padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: 'black',
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 1,
     },
-    shadowOpacity: 0.20,
+    shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
   },
