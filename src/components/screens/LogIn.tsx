@@ -11,7 +11,7 @@ const LogIn = ({ navigation }: Props): JSX.Element => {
   return(
     <View style={styles.container}>
       <Image source={require('../../../assets/logo.png')} />
-      <SignInForm />
+      <SignInForm navigation={navigation} />
       <Button 
         type="link" 
         title="Explora NicTravel"

@@ -2,66 +2,68 @@ import React from "react";
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { dataSugerencias } from "../data/sugerencias";
+import NavBar from "../organisms/NavBar";
 
 const Home = (): JSX.Element => {
   const handleSearchPress = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.searchSection}>
-        <TextInput
-          placeholder="Buscar en NicTravel"
-          style={styles.searchInput}
-          placeholderTextColor="gray"
-        />
-
-        <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
-          <AntDesign name="search1" size={24} color="gray" />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.suggestionsContainer}>
-        <View style={styles.suggestionsText}>
-          <Text style={styles.boldText}>Sugerencias</Text>
-        </View>
-        <TouchableOpacity
-          style={styles.seeAllText}
-          onPress={() => console.log("Ver todo presionado")}
-        >
-          <Text style={styles.greenText}>Ver todo</Text>
-          <AntDesign name="right" size={18} color="green" />
-        </TouchableOpacity>
-      </View>
-
+    <View style={styles.mainContainer}>
       <ScrollView
-        horizontal
-        style={styles.categoryScrollView}
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
+        style={styles.container}
       >
-        {dataSugerencias.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.categoryContainer}>
-            <View style={styles.card}>
-              <Image
-                source={{ uri: item.image }}
-                style={styles.categoryImage}
-              />
+        <View style={styles.searchSection}>
+          <TextInput
+            placeholder="Buscar en NicTravel"
+            style={styles.searchInput}
+            placeholderTextColor="gray"
+          />
+          
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
+            <AntDesign name="search1" size={24} color="gray" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.suggestionsContainer}>
+          <View style={styles.suggestionsText}>
+            <Text style={styles.boldText}>Sugerencias</Text>
+          </View>
+          <TouchableOpacity style={styles.seeAllText} onPress={() => console.log("Ver todo presionado")}>
+            <Text style={styles.greenText}>Ver todo</Text>
+            <AntDesign name="right" size={18} color="green" />
+          </TouchableOpacity>
+        </View>
+
+        <ScrollView horizontal style={styles.categoryScrollView}
+          showsHorizontalScrollIndicator={false}
+        >
+          {dataSugerencias.map((item, index) => (
+            <View key={index} style={styles.categoryContainer}>
+              <Image source={{ uri: item.image }} style={styles.categoryImage} />
               <Text style={styles.categoryText}>{item.name}</Text>
             </View>
-          </TouchableOpacity>
-        ))}
+          ))}
+        </ScrollView>
+        
+
       </ScrollView>
-    </ScrollView>
+      <NavBar />
+    </View>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
+    //borderWidth: 4,
+    //borderColor: 'red',
     flex: 1,
     padding: 10,
+  },
+  container: {
+    padding: 0,
   },
   searchSection: {
     flexDirection: "row",
@@ -69,12 +71,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: 10,
-    shadowColor: 'black',
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 1,
     },
-    shadowOpacity: 0.20,
+    shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
     paddingHorizontal: 10,
@@ -114,22 +116,19 @@ const styles = StyleSheet.create({
   categoryScrollView: {
     marginTop: 20,
   },
-  categoryContainer: {
-    alignItems: "center",
-  },
-  card: {
-    backgroundColor: 'white',
+  categoryContainer:  {
+    backgroundColor: "white",
     borderRadius: 10,
     margin: 10,
     padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: 'black',
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 1,
     },
-    shadowOpacity: 0.20,
+    shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
   },
