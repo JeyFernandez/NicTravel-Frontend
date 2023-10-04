@@ -1,7 +1,5 @@
-import React, { Component } from "react";
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import NavBar from "../organisms/NavBar";
 
 const data = [
   { name: "Hoteles", image: "https://laverdadnoticias.com/__export/1585620552106/sites/laverdad/img/2020/03/30/clalasificacion_hoteles_2.jpg_1834093470.jpg" },
@@ -51,8 +49,7 @@ const Home = (): JSX.Element => {
         </ScrollView>
         
 
-      </ScrollView> 
-      {/*<NavBar />*/}
+      </ScrollView>
     </View>
   );
 };
@@ -61,10 +58,8 @@ export default Home;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    //borderWidth: 4,
-    //borderColor: 'red',
     flex: 1,
-    backgroundColor: 'white',
+    marginTop: 30,
   },
   container: {
     //flex: 1,
