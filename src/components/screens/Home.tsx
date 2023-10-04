@@ -10,17 +10,18 @@ const Home = (): JSX.Element => {
 
   return (
     <View style={styles.mainContainer}>
-      <ScrollView
-        style={styles.container}
-      >
+      <ScrollView style={styles.container}>
         <View style={styles.searchSection}>
           <TextInput
             placeholder="Buscar en NicTravel"
             style={styles.searchInput}
             placeholderTextColor="gray"
           />
-          
-          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
+
+          <TouchableOpacity
+            style={styles.searchIcon}
+            onPress={handleSearchPress}
+          >
             <AntDesign name="search1" size={24} color="gray" />
           </TouchableOpacity>
         </View>
@@ -29,24 +30,32 @@ const Home = (): JSX.Element => {
           <View style={styles.suggestionsText}>
             <Text style={styles.boldText}>Sugerencias</Text>
           </View>
-          <TouchableOpacity style={styles.seeAllText} onPress={() => console.log("Ver todo presionado")}>
+          <TouchableOpacity
+            style={styles.seeAllText}
+            onPress={() => console.log("Ver todo presionado")}
+          >
             <Text style={styles.greenText}>Ver todo</Text>
             <AntDesign name="right" size={18} color="green" />
           </TouchableOpacity>
         </View>
 
-        <ScrollView horizontal style={styles.categoryScrollView}
+        <ScrollView
+          horizontal
+          style={styles.categoryScrollView}
           showsHorizontalScrollIndicator={false}
         >
           {dataSugerencias.map((item, index) => (
-            <View key={index} style={styles.categoryContainer}>
-              <Image source={{ uri: item.image }} style={styles.categoryImage} />
-              <Text style={styles.categoryText}>{item.name}</Text>
-            </View>
+            <TouchableOpacity key={index} style={styles.categoryContainer}>
+              <View key={index} style={styles.card}>
+                <Image
+                  source={{ uri: item.image }}
+                  style={styles.categoryImage}
+                />
+                <Text style={styles.categoryText}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </ScrollView>
-        
-
       </ScrollView>
       <NavBar />
     </View>
@@ -60,10 +69,11 @@ const styles = StyleSheet.create({
     //borderWidth: 4,
     //borderColor: 'red',
     flex: 1,
-    padding: 10,
+    
   },
   container: {
-    padding: 0,
+    flex: 1,
+    padding: 10,
   },
   searchSection: {
     flexDirection: "row",
@@ -116,7 +126,11 @@ const styles = StyleSheet.create({
   categoryScrollView: {
     marginTop: 20,
   },
-  categoryContainer:  {
+  categoryContainer: {
+    alignItems: "center",
+  },
+
+  card:  {
     backgroundColor: "white",
     borderRadius: 10,
     margin: 10,
