@@ -7,7 +7,7 @@ import BottomTabs from "./BottomTabs";
 
 const Stack = createNativeStackNavigator();
 
-const MainStack = () => {
+const MainStack = () => { 
   return(
     <NavigationContainer>
       <Stack.Navigator>
