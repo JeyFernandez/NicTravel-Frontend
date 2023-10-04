@@ -9,21 +9,8 @@ const Home = (): JSX.Element => {
 
   return (
     <View style={styles.mainContainer}>
-      <ScrollView
-        style={styles.container}
-      >
-        <View style={styles.searchSection}>
-          <TextInput
-            placeholder="Buscar en NicTravel"
-            style={styles.searchInput}
-            placeholderTextColor="gray"
-          />
-          
-          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
-            <AntDesign name="search1" size={24} color="gray" />
-          </TouchableOpacity>
-        </View>
-    <ScrollView style={styles.container}>
+      
+      <ScrollView style={styles.container}>
       <View style={styles.searchSection}>
         <TextInput
           placeholder="Buscar en NicTravel"
@@ -50,11 +37,10 @@ const Home = (): JSX.Element => {
         </View>
 
         <ScrollView
-        horizontal
-        style={styles.categoryScrollView}
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      >
+          horizontal
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+        >
           {dataSugerencias.map((item, index) => (
             <TouchableOpacity key={index} style={styles.categoryContainer}>
             <View style={styles.card}>
@@ -67,8 +53,6 @@ const Home = (): JSX.Element => {
           </TouchableOpacity>
           ))}
         </ScrollView>
-        
-
       </ScrollView>
     </View>
   );
@@ -135,9 +119,6 @@ const styles = StyleSheet.create({
     color: "green",
     marginRight: 5,
     fontWeight: "bold",
-  },
-  categoryScrollView: {
-    marginTop: 20,
   },
   categoryContainer: {
     alignItems: "center",
