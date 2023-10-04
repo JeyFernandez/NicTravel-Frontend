@@ -20,9 +20,6 @@ const NavBarBtn = ({ type, title, color }: NavBarBtnProps): JSX.Element => {
   return(
     <Pressable style={styles.container}>
       {icons[type]}
-      {/* 
-      <CustomText text={title} type='body2' />
-      */}
     </Pressable>
   );
 }

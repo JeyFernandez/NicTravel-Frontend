@@ -1,7 +1,6 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { dataSugerencias } from "../data/sugerencias";
-import NavBar from "../organisms/NavBar";
 
 const Home = (): JSX.Element => {
   
@@ -70,16 +69,8 @@ const styles = StyleSheet.create({
     
   },
   container: {
-
     flex: 1,
     marginTop: 30,
-  },
-  container: {
-    //flex: 1,
-    padding: 10,
-
-    //backgroundColor: 'skyblue',
-    //borderWidth: 5,
   },
   searchSection: {
     flexDirection: "row",
