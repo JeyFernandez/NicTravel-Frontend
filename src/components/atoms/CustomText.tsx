@@ -3,14 +3,20 @@ import { Text, StyleSheet } from "react-native";
 type TextProps = {
   type: 'heading2' | 'body1' | 'body2';
   text: string;
+  color?: string
 };
 
-const CustomText = ({ type, text }: TextProps): JSX.Element => {
+/*Text types:
+Heading1, Heading2
+Body1, Body2
+Link*/
+
+const CustomText = ({ type, text, color }: TextProps): JSX.Element => {
 
   const textStyle = styles[type];
 
   return(
-    <Text style={textStyle}>
+    <Text style={[textStyle, { color: color ? color : 'black' }]}>
       { text }
     </Text>
   );

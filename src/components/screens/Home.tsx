@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import NavBar from "../organisms/NavBar";
@@ -10,6 +10,7 @@ const data = [
 ];
 
 const Home = (): JSX.Element => {
+  
   const handleSearchPress = () => {
   };
 
@@ -50,8 +51,8 @@ const Home = (): JSX.Element => {
         </ScrollView>
         
 
-      </ScrollView>
-      <NavBar />
+      </ScrollView> 
+      {/*<NavBar />*/}
     </View>
   );
 };
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     //borderWidth: 4,
     //borderColor: 'red',
     flex: 1,
+    backgroundColor: 'white',
   },
   container: {
     //flex: 1,

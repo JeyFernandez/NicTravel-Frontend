@@ -6,20 +6,23 @@ import CustomText from "../atoms/CustomText";
 type NavBarBtnProps = {
   type: 'home' | 'map' | 'account' ;
   title: string;
+  color?: string;
 }
 
-const NavBarBtn = ({ type, title }: NavBarBtnProps): JSX.Element => {
+const NavBarBtn = ({ type, title, color }: NavBarBtnProps): JSX.Element => {
 
   const icons: {[key: string]: JSX.Element} = {
-    home: <Entypo name="home" size={30} color='black' />,
-    map: <Ionicons name="location-sharp" size={30} color='black' />,
-    account: <MaterialCommunityIcons name="account" size={30} color='black' />
+    home: <Entypo name="home" size={28} color={color} />,
+    map: <Ionicons name="location-sharp" size={28} color={color} />,
+    account: <MaterialCommunityIcons name="account" size={28} color={color} />
   }
 
   return(
     <Pressable style={styles.container}>
       {icons[type]}
+      {/* 
       <CustomText text={title} type='body2' />
+      */}
     </Pressable>
   );
 }
