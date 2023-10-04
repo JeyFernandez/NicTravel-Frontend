@@ -1,39 +1,37 @@
-import React from "react";
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { dataSugerencias } from "../data/sugerencias";
 import NavBar from "../organisms/NavBar";
 
 const Home = (): JSX.Element => {
+  
   const handleSearchPress = () => {
   };
 
   return (
     <View style={styles.mainContainer}>
+      
       <ScrollView style={styles.container}>
-        <View style={styles.searchSection}>
-          <TextInput
-            placeholder="Buscar en NicTravel"
-            style={styles.searchInput}
-            placeholderTextColor="gray"
-          />
+      <View style={styles.searchSection}>
+        <TextInput
+          placeholder="Buscar en NicTravel"
+          style={styles.searchInput}
+          placeholderTextColor="gray"
+        />
 
-          <TouchableOpacity
-            style={styles.searchIcon}
-            onPress={handleSearchPress}
-          >
-            <AntDesign name="search1" size={24} color="gray" />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
+          <AntDesign name="search1" size={24} color="gray" />
+        </TouchableOpacity>
+      </View>
 
         <View style={styles.suggestionsContainer}>
           <View style={styles.suggestionsText}>
             <Text style={styles.boldText}>Sugerencias</Text>
           </View>
           <TouchableOpacity
-            style={styles.seeAllText}
-            onPress={() => console.log("Ver todo presionado")}
-          >
+          style={styles.seeAllText}
+          onPress={() => console.log("Ver todo presionado")}
+        >
             <Text style={styles.greenText}>Ver todo</Text>
             <AntDesign name="right" size={18} color="green" />
           </TouchableOpacity>
@@ -41,23 +39,22 @@ const Home = (): JSX.Element => {
 
         <ScrollView
           horizontal
-          style={styles.categoryScrollView}
+          showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
           {dataSugerencias.map((item, index) => (
             <TouchableOpacity key={index} style={styles.categoryContainer}>
-              <View key={index} style={styles.card}>
+            <View style={styles.card}>
                 <Image
-                  source={{ uri: item.image }}
-                  style={styles.categoryImage}
-                />
+                source={{ uri: item.image }}
+                style={styles.categoryImage}
+              />
                 <Text style={styles.categoryText}>{item.name}</Text>
               </View>
-            </TouchableOpacity>
+          </TouchableOpacity>
           ))}
         </ScrollView>
       </ScrollView>
-      <NavBar />
     </View>
   );
 };
@@ -66,14 +63,23 @@ export default Home;
 
 const styles = StyleSheet.create({
   mainContainer: {
+
     //borderWidth: 4,
     //borderColor: 'red',
     flex: 1,
     
   },
   container: {
+
     flex: 1,
+    marginTop: 30,
+  },
+  container: {
+    //flex: 1,
     padding: 10,
+
+    //backgroundColor: 'skyblue',
+    //borderWidth: 5,
   },
   searchSection: {
     flexDirection: "row",
@@ -122,9 +128,6 @@ const styles = StyleSheet.create({
     color: "green",
     marginRight: 5,
     fontWeight: "bold",
-  },
-  categoryScrollView: {
-    marginTop: 20,
   },
   categoryContainer: {
     alignItems: "center",
