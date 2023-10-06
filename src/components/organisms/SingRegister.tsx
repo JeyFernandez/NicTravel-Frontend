@@ -1,12 +1,14 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Keyboard } from "react-native";
+
 import CustomText from "../atoms/CustomText";
 import Input from "../atoms/Input";
-import Button from "../molecules/Button";
+import Button from "../molecules/Button"
 
 
 const SignRegister = (): JSX.Element => {
 
   const handleButtonClick = () => {
+    //console.log(Keyboard.isVisible())
   };
 
   return(
