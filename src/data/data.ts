@@ -15,3 +15,6 @@ export const dataSugerencias = [
       "https://th.bing.com/th/id/R.d96ff91dac20ef266a028ed8687bdfff?rik=MkjXLPzqcZZNFA&riu=http%3a%2f%2fcos.h-cdn.co%2fassets%2f15%2f51%2f480x724%2f1450446691-gettyimages-500694179_master.jpg&ehk=TiLKKv4JG1CU91Lc15qtNvBkK%2fcSf8p9Ffa6pWwM62Y%3d&risl=&pid=ImgRaw&r=0",
   },
 ];
+export const card = {
+  
+}
