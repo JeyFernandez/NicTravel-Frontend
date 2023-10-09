@@ -1,3 +1,4 @@
+// sugerencias de busqueda
 export const dataSugerencias = [
   {
     name: "Hoteles",
@@ -15,6 +16,12 @@ export const dataSugerencias = [
       "https://th.bing.com/th/id/R.d96ff91dac20ef266a028ed8687bdfff?rik=MkjXLPzqcZZNFA&riu=http%3a%2f%2fcos.h-cdn.co%2fassets%2f15%2f51%2f480x724%2f1450446691-gettyimages-500694179_master.jpg&ehk=TiLKKv4JG1CU91Lc15qtNvBkK%2fcSf8p9Ffa6pWwM62Y%3d&risl=&pid=ImgRaw&r=0",
   },
 ];
-export const card = {
-  
-}
+
+// usuario de prueba
+export const user = {
+  name: "Kelly Dayana Mendez",
+  email: "kellydayana@gmail.com",
+  phoneNumber: "+505 8888-8888",
+  URL:
+    "https://play-lh.googleusercontent.com/_qUtBpMVsGY-CLPx2DreAENHAbr4KHwBGn2w_3jhGSzoRVFRKn0SXUaK0wXSU0SJ7A",
+};
