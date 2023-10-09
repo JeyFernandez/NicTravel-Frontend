@@ -1,10 +1,11 @@
 import React, { Pressable, StyleSheet } from "react-native";
 import CustomText from "../atoms/CustomText";
-import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 type BtnMyAccoutnProps = {
   type: "bussiness" | "reserva";
   title: string;
+  iconstyle?: object;
   onClick: Function;
 };
 const BtnMyAccount = ({
@@ -20,7 +21,8 @@ const BtnMyAccount = ({
   };
   return (
     <Pressable style={textStyle} onPress={handleClick}>
-          <CustomText text={title} type="body1" />
+      <CustomText text={title} type="body1" />
+      <FontAwesome5 name="store-alt" size={28} color='black' />
     </Pressable>
   );
 };
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "wite",
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 10,
   },

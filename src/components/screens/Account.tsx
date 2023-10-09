@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   titleVisit: {
+    width:"100%",
     marginTop: 20,
+    paddingLeft: 20,
     alignItems :"flex-start",
   },
 });
