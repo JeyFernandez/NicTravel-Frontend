@@ -17,6 +17,21 @@ export const dataSugerencias = [
   },
 ];
 
+export const myVisit = [
+  {
+    URL: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kathedrale_Leon_2.JPG/1200px-Kathedrale_Leon_2.JPG",
+    name: "Catedral de Leon",
+    description: "Catedral de Leon, Nicaragua",
+    star: " 4.5",
+  },
+  {
+    URL: "https://mediaim.expedia.com/destination/2/cdeb26550e3a36724de974aadd45e446.jpg",
+    name: "Catedral de Granada",
+    description: "Catedral de Granada, Nicaragua",
+    star: " 4.5",
+  },
+];
+
 // usuario de prueba
 export const user = {
   name: "Kelly Dayana Mendez",

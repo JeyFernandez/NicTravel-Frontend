@@ -4,6 +4,7 @@ import ImageUser from "../atoms/ImageProfile";
 import { user } from '../../data/data';
 import CustomText from '../atoms/CustomText';
 import BtnMyAccount from '../molecules/BtnMyAccount';
+import CardMyVisit from "../organisms/CardMyVisit";
 
 
 const Account = (): JSX.Element => {
@@ -26,6 +27,7 @@ const Account = (): JSX.Element => {
         <BtnMyAccount
           type="bussiness"
           title="Mi Negocio"
+          iconicons="store-alt"
           onClick={handleClick}
         />
       </View>
@@ -33,6 +35,7 @@ const Account = (): JSX.Element => {
         <BtnMyAccount
           type="reserva"
           title="Mis Reservas"
+          iconicons="arrow-circle-right"
           onClick={handleClick}
         />
       </View>
@@ -40,6 +43,9 @@ const Account = (): JSX.Element => {
       {/* mis visitas  */}
       <View style={styles.titleVisit}>
         <CustomText type="heading2" text="Mis Visitas" />
+      </View>
+      <View>
+        <CardMyVisit/>
       </View>
     </View>
   );
@@ -55,21 +61,29 @@ const styles = StyleSheet.create({
 
   userPrefile: {
     marginTop: 72,
-
+    borderRadius: 100,
+    shadowColor: "black",
+    shadowOffset: {
+      width: 4,
+      height: 6,
+    },
+    
+    shadowRadius: 2,
+    elevation: 5,
   },
   infoUsers: {
     marginTop: 24,
     alignItems: "center",
-    
   },
   BtnMyBusiness: {
     marginTop: 20,
   },
   titleVisit: {
-    width:"100%",
-    marginTop: 20,
+
+    width: "100%",
+    marginTop: 40,
     paddingLeft: 20,
-    alignItems :"flex-start",
+    alignItems: "flex-start",
   },
 });
 

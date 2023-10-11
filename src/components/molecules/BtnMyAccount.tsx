@@ -1,16 +1,17 @@
 import React, { Pressable, StyleSheet } from "react-native";
 import CustomText from "../atoms/CustomText";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 
 type BtnMyAccoutnProps = {
   type: "bussiness" | "reserva";
   title: string;
-  iconstyle?: object;
+  iconicons: string;
   onClick: Function;
 };
 const BtnMyAccount = ({
   type,
   title,
+  iconicons,
   onClick,
 }: BtnMyAccoutnProps): JSX.Element => {
   const textStyle = styles[type];
@@ -22,25 +23,27 @@ const BtnMyAccount = ({
   return (
     <Pressable style={textStyle} onPress={handleClick}>
       <CustomText text={title} type="body1" />
-      <FontAwesome5 name="store-alt" size={28} color='black' />
+      <FontAwesome5 name={iconicons} size={24} color="black" />
     </Pressable>
   );
 };
 export default BtnMyAccount;
 const styles = StyleSheet.create({
   bussiness: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     width: 401,
     height: 75,
-    justifyContent: "center",
     alignItems: "center",
     padding: 20,
     backgroundColor: "#0EC6A2",
     borderRadius: 10,
   },
   reserva: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     width: 401,
     height: 75,
-    justifyContent: "center",
     alignItems: "center",
     padding: 20,
     backgroundColor: "wite",
