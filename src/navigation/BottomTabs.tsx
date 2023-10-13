@@ -1,22 +1,21 @@
 import { StyleSheet } from 'react-native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../components/screens/Home';
 import Map from '../components/screens/Map';
 import NavBarBtn from '../components/molecules/NavBarBtn';
 import Account from '../components/screens/Account';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
+
+//activeColor='#55b1c8'
 
 const BottomTabs = () => {
   return(
     <Tab.Navigator
-      initialRouteName='home'
-      activeColor='#55b1c8'
-      barStyle={{
-        height: 80,
-        borderTopLeftRadius: 20,
-        ...styles.shadow,
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: { ...styles.shadow }
       }}
     >
       <Tab.Screen 
@@ -24,7 +23,7 @@ const BottomTabs = () => {
         component={Home} 
         options={{
           tabBarIcon: ({ color }) => (
-            <NavBarBtn type='home' title='Inicio' color={color} />
+            <NavBarBtn type='home' color={color} />
           ),
         }}
       />
@@ -33,7 +32,7 @@ const BottomTabs = () => {
         component={Map} 
         options={{
           tabBarIcon: ({ color }) => (
-            <NavBarBtn type='map' title='Mapa' color={color} />
+            <NavBarBtn type='map' color={color} />
           ),
         }}
       />
@@ -42,7 +41,7 @@ const BottomTabs = () => {
         component={Account}
         options={{
           tabBarIcon: ({ color }) => (
-            <NavBarBtn type='account' title='Cuenta' color={color} />
+            <NavBarBtn type='account' color={color} />
           )
         }}
       />
@@ -62,6 +61,10 @@ const styles = StyleSheet.create({
     },     
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,      
+    elevation: 5,     
+    
+    borderRadius: 40,
+    marginBottom: 2,
+    paddingTop: 10,
   }
 })
