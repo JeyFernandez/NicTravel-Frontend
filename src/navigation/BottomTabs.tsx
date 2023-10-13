@@ -8,31 +8,31 @@ import Account from '../components/screens/Account';
 
 const Tab = createBottomTabNavigator();
 
-//activeColor='#55b1c8'
-
 const BottomTabs = () => {
   return(
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: { ...styles.shadow }
+        tabBarStyle: { ...styles.shadow },
+        tabBarShowLabel: false,
       }}
     >
       <Tab.Screen 
         name='Inicio' 
         component={Home} 
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='home' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='home' isFocused={focused} />
           ),
+          tabBarLabelStyle: {  }
         }}
       />
       <Tab.Screen 
         name='Mapa' 
         component={Map} 
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='map' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='map' isFocused={focused} />
           ),
         }}
       />
@@ -40,8 +40,8 @@ const BottomTabs = () => {
         name='Cuenta'
         component={Account}
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='account' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='account' isFocused={focused} />
           )
         }}
       />
@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
     
     borderRadius: 40,
     marginBottom: 2,
-    paddingTop: 10,
+    paddingTop: '5%',
   }
 })
