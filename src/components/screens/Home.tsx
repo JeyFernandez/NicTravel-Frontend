@@ -1,36 +1,36 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { dataSugerencias } from "../../data/data";
+import { hotel, dataSugerencias, } from "../../data/data";
 
 const Home = (): JSX.Element => {
-  
+
   const handleSearchPress = () => {
   };
 
   return (
     <View style={styles.mainContainer}>
-      
-      <ScrollView style={styles.container}>
-      <View style={styles.searchSection}>
-        <TextInput
-          placeholder="Buscar en NicTravel"
-          style={styles.searchInput}
-          placeholderTextColor="gray"
-        />
 
-        <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
-          <AntDesign name="search1" size={24} color="gray" />
-        </TouchableOpacity>
-      </View>
+      <ScrollView style={styles.container}>
+        <View style={styles.searchSection}>
+          <TextInput
+            placeholder="Buscar en NicTravel"
+            style={styles.searchInput}
+            placeholderTextColor="gray"
+          />
+
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
+            <AntDesign name="search1" size={24} color="gray" />
+          </TouchableOpacity>
+        </View>
 
         <View style={styles.suggestionsContainer}>
           <View style={styles.suggestionsText}>
             <Text style={styles.boldText}>Sugerencias</Text>
           </View>
           <TouchableOpacity
-          style={styles.seeAllText}
-          onPress={() => console.log("Ver todo presionado")}
-        >
+            style={styles.seeAllText}
+            onPress={() => console.log("Ver todo presionado")}
+          >
             <Text style={styles.greenText}>Ver todo</Text>
             <AntDesign name="right" size={18} color="green" />
           </TouchableOpacity>
@@ -43,16 +43,35 @@ const Home = (): JSX.Element => {
         >
           {dataSugerencias.map((item, index) => (
             <TouchableOpacity key={index} style={styles.categoryContainer}>
-            <View style={styles.card}>
+              <View style={styles.card}>
                 <Image
-                source={{ uri: item.image }}
-                style={styles.categoryImage}
-              />
+                  source={{ uri: item.image }}
+                  style={styles.categoryImage}
+                />
                 <Text style={styles.categoryText}>{item.name}</Text>
               </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
           ))}
         </ScrollView>
+
+        <View>
+          {hotel.map((item, index) => (
+            <View style={styles.cardHotel}>
+
+              <TouchableOpacity key={index} style={styles.categoryContainer}>
+                <View>
+                  <Image
+                    source={{ uri: item.image }}
+                    style={styles.hotelImage}
+                  />
+                  <Text style={styles.categoryText}>{item.name}</Text>
+                </View>
+              </TouchableOpacity>
+
+            </View>
+          ))}
+        </View>
+
       </ScrollView>
     </View>
   );
@@ -62,11 +81,8 @@ export default Home;
 
 const styles = StyleSheet.create({
   mainContainer: {
-
-    //borderWidth: 4,
-    //borderColor: 'red',
     flex: 1,
-    
+
   },
   container: {
     flex: 1,
@@ -124,7 +140,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  card:  {
+  card: {
     backgroundColor: "white",
     borderRadius: 10,
     margin: 10,
@@ -149,5 +165,26 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 16,
     fontWeight: "bold",
+  },
+  cardHotel: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    margin: 10,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
+  },
+  hotelImage: {
+    width: 340,
+    height: 180,
+    borderRadius: 10,
   },
 });

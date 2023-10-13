@@ -17,6 +17,21 @@ export const dataSugerencias = [
   },
 ];
 
+export const hotel = [
+  {
+    name: "Hotel la Pérgola",
+    image:
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/eb/cc/74/piscina.jpg?w=700&h=-1&s=1"
+  },
+  
+  {
+    name: "Hotel la Pérgola",
+    image:
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/eb/cc/74/piscina.jpg?w=700&h=-1&s=1"
+  },
+  
+]
+
 // usuario de prueba
 export const user = {
   name: "Kelly Dayana Mendez",
