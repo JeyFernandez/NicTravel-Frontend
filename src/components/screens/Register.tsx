@@ -1,7 +1,7 @@
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
 import SignRegister from "../organisms/SingRegister";
 
-import Button from "../molecules/Button";
+import AvoidKeyboard from "../../hooks/AvoidKeyboard";
 
 interface Props {
   navigation: any
@@ -9,10 +9,12 @@ interface Props {
 
 const Register = ({ navigation }: Props): JSX.Element => {
   return(
-    <View style={styles.container}>
-      <Image source={require('../../../assets/logo.png')} />
-      <SignRegister />
-    </View>
+    <AvoidKeyboard>
+      <View style={styles.container}>
+        <Image source={require('../../../assets/logo.png')} />
+        <SignRegister />
+      </View>
+    </AvoidKeyboard>
   );
 }
 
@@ -20,7 +22,7 @@ export default Register;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: 740, //This sould be % for the devices's different dimensions
     justifyContent: 'space-evenly',
     alignItems: 'center',
   }
