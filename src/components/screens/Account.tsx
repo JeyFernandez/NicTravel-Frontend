@@ -5,6 +5,7 @@ import { user } from '../../data/data';
 import CustomText from '../atoms/CustomText';
 import BtnMyAccount from '../molecules/BtnMyAccount';
 import CardMyVisit from "../organisms/CardMyVisit";
+import Hotels from "../organisms/Hotel";
 
 
 const Account = (): JSX.Element => {
@@ -12,6 +13,8 @@ const Account = (): JSX.Element => {
   const handleClick = () => { 
     alert('Estamos trabajando en esta funcionalidad')
   }
+  //ir a Places 
+  const handlePlaces = () => { }
   return (
     <View style={styles.container}>
       <View style={styles.userPrefile}>
@@ -45,7 +48,7 @@ const Account = (): JSX.Element => {
         <CustomText type="heading2" text="Mis Visitas" />
       </View>
       <View>
-        <CardMyVisit/>
+        <Hotels/>
       </View>
     </View>
   );
