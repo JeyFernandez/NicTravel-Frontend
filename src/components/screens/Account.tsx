@@ -5,7 +5,6 @@ import { user } from '../../data/data';
 import CustomText from '../atoms/CustomText';
 import BtnMyAccount from '../molecules/BtnMyAccount';
 import CardMyVisit from "../organisms/CardMyVisit";
-import Hotels from "../organisms/Hotel";
 
 
 const Account = (): JSX.Element => {
@@ -48,7 +47,7 @@ const Account = (): JSX.Element => {
         <CustomText type="heading2" text="Mis Visitas" />
       </View>
       <View>
-        <Hotels/>
+        <CardMyVisit/>
       </View>
     </View>
   );
