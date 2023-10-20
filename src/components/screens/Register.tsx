@@ -7,6 +7,7 @@ interface Props {
   navigation: any
 }
 
+
 const Register = ({ navigation }: Props): JSX.Element => {
   return(
     <AvoidKeyboard>
