@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import axios from "axios";
 import CustomText from "../atoms/CustomText";
 import { Hotel } from '../../interfaces/interface';
@@ -26,14 +26,15 @@ const Hotels = (): JSX.Element => {
   return (
     <View>
       <CustomText type="heading2" text="Usuarios" />
-      {hotelsData.map((Hotel) => (
-        <View key={Hotel.id}>
-          <Text>{Hotel.name}</Text>
-          <Text>{Hotel.description}</Text>
-          <Text>{Hotel.address}</Text>
-          <Text>{Hotel.phone}</Text>
-        </View>
-      ))}
+      <FlatList
+        data={hotelsData}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.name}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id.toString()}
+      />
     </View>
   );
 };
