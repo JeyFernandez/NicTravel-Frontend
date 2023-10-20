@@ -1,14 +1,25 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import { hotel } from "../../data/data";
+import { useNavigation } from '@react-navigation/native';
+
 
 const CardsHotels = (): JSX.Element => {
+  const navigation = useNavigation();
+
+  const handleCardsPress = () => {
+    navigation.navigate('HotelPergola')
+  };
+
   return (
-    <Pressable>
+    <View>
+
       {hotel.map((item, index) => (
         <View style={styles.cardHotel}>
 
-          <TouchableOpacity key={index} style={styles.categoryContainer}>
+          <Pressable key={index} style={styles.categoryContainer}
+            onPress={handleCardsPress}
+          >
             <View>
               <Image
                 source={{ uri: item.image }}
@@ -16,11 +27,11 @@ const CardsHotels = (): JSX.Element => {
               />
               <Text style={styles.categoryText}>{item.name}</Text>
             </View>
-          </TouchableOpacity>
+          </Pressable>
 
         </View>
       ))}
-    </Pressable>
+    </View>
   );
 };
 

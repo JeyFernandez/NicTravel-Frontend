@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LogIn from "../components/screens/LogIn";
 import Register from '../components/screens/Register';
 import BottomTabs from "./BottomTabs";
+import HotelPergola from '../components/screens/HotelPergola';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,13 @@ const MainStack = () => {
           options={{
             headerShown: false
           }}
+        />
+        <Stack.Screen
+        name="HotelPergola"
+        component={HotelPergola}
+        options={{
+          headerShown: false
+        }}
         />
         <Stack.Screen 
           name="Tabs"

@@ -4,6 +4,7 @@ import Suggestions from '../organisms/Suggestions';
 import CardsSuggestions from "../organisms/CardsSuggestions";
 import CardsHotels from "../organisms/CardsHotels";
 
+
 const Home = (): JSX.Element => {
   return (
     <View style={styles.mainContainer}>
@@ -14,10 +15,8 @@ const Home = (): JSX.Element => {
         <CardsSuggestions />
         <CardsHotels />
       </ScrollView>
-      
+
     </View>
-
-
   );
 };
 
