@@ -1,39 +1,38 @@
 import { StyleSheet } from 'react-native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../components/screens/Home';
 import Map from '../components/screens/Map';
 import NavBarBtn from '../components/molecules/NavBarBtn';
 import Account from '../components/screens/Account';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return(
     <Tab.Navigator
-      initialRouteName='home'
-      activeColor='#55b1c8'
-      barStyle={{
-        height: 80,
-        borderTopLeftRadius: 20,
-        ...styles.shadow,
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: { ...styles.shadow },
+        tabBarShowLabel: false,
       }}
     >
       <Tab.Screen 
         name='Inicio' 
         component={Home} 
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='home' title='Inicio' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='home' isFocused={focused} />
           ),
+          tabBarLabelStyle: {  }
         }}
       />
       <Tab.Screen 
         name='Mapa' 
         component={Map} 
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='map' title='Mapa' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='map' isFocused={focused} />
           ),
         }}
       />
@@ -41,8 +40,8 @@ const BottomTabs = () => {
         name='Cuenta'
         component={Account}
         options={{
-          tabBarIcon: ({ color }) => (
-            <NavBarBtn type='account' title='Cuenta' color={color} />
+          tabBarIcon: ({ focused }) => (
+            <NavBarBtn type='account' isFocused={focused} />
           )
         }}
       />
@@ -62,6 +61,10 @@ const styles = StyleSheet.create({
     },     
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,      
+    elevation: 5,     
+    
+    borderRadius: 40,
+    marginBottom: 2,
+    paddingTop: '5%',
   }
 })
