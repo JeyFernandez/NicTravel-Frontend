@@ -48,7 +48,7 @@ const Account = (): JSX.Element => {
         <CustomText type="heading2" text="Mis Visitas" />
       </View>
       <View>
-        <CardMyVisit />
+        <Hotels />
       </View>
     </View>
   );
