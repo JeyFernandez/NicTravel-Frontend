@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, TextInput, TouchableOpacity, View, Text, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { dataSugerencias } from "../data/sugerencias";
+import { dataSugerencias } from "../../data/data";
 
 const Home = (): JSX.Element => {
   
