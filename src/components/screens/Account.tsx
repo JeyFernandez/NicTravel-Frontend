@@ -5,12 +5,15 @@ import { user } from '../../data/data';
 import CustomText from '../atoms/CustomText';
 import BtnMyAccount from '../molecules/BtnMyAccount';
 import CardMyVisit from "../organisms/CardMyVisit";
-import Hotels from "../organisms/Hotel";
+interface AccountProps {
+  navigation: any;
+}
 
-
-const Account = (): JSX.Element => {
+const Account = ({navigation}:AccountProps): JSX.Element => {
 
   const handleClick = () => { 
+
+
     alert('Estamos trabajando en esta funcionalidad')
   }
   //ir a Places 
@@ -31,7 +34,9 @@ const Account = (): JSX.Element => {
           type="bussiness"
           title="Mi Negocio"
           iconicons="store-alt"
-          onClick={handleClick}
+          onClick={
+            () => navigation.navigate('MyBusiness')
+          }
         />
       </View>
       <View style={styles.BtnMyBusiness}>
@@ -48,7 +53,7 @@ const Account = (): JSX.Element => {
         <CustomText type="heading2" text="Mis Visitas" />
       </View>
       <View>
-      
+        <CardMyVisit/>
       </View>
     </View>
   );

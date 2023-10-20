@@ -13,11 +13,11 @@ const CardMyVisit = (
       {
         myVisit.map((item, index) => {
           return (
-            <View style={styles.container}>
-              <View style={styles.card} key={index}>
+            <View key={index} style={styles.container}>
+              <View style={styles.card} >
                 <Image style={styles.image} source={{ uri: item.URL }} />
                 <View>
-                  <CustomText type="heading2" text={item.name} />
+                  <CustomText  type="heading2" text={item.name} />
                   <CustomText type="body2" text={item.description} />
                   <View style={styles.containerStars}>
                     <AntDesign name="star" size={24} color="black" />
