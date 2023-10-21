@@ -3,6 +3,10 @@ import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import { hotel } from "../../data/data";
 import { useNavigation } from '@react-navigation/native';
 
+interface Props {
+  navigation: any
+}
+
 
 const CardsHotels = (): JSX.Element => {
   const navigation = useNavigation();

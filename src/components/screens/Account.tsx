@@ -8,7 +8,7 @@ import BtnMyAccount from '../molecules/BtnMyAccount';
 
 const Account = (): JSX.Element => {
 
-  const handleClick = () => { 
+  const handleClick = () => {
     alert('Estamos trabajando en esta funcionalidad')
   }
   return (
