@@ -10,14 +10,6 @@ interface AccountProps {
 }
 
 const Account = ({navigation}:AccountProps): JSX.Element => {
-
-  const handleClick = () => { 
-
-
-    alert('Estamos trabajando en esta funcionalidad')
-  }
-  //ir a Places 
-  const handlePlaces = () => { }
   return (
     <View style={styles.container}>
       <View style={styles.userPrefile}>

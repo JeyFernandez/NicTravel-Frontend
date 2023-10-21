@@ -3,7 +3,7 @@ export const dataSugerencias = [
   {
     name: "Hoteles",
     image:
-      "https://laverdadnoticias.com/__export/1585620552106/sites/laverdad/img/2020/03/30/clalasificacion_hoteles_2.jpg_1834093470.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max500/426033682.jpg?k=c314bbe8a5c8ab6a21de249cc3335d8276c9739fd6e6d09209992a891f6dbf3b&o=",
   },
   {
     name: "Restaurantes",
@@ -31,6 +31,26 @@ export const myVisit = [
     star: " 4.5",
   },
 ];
+// Hoteles Restaurantes y lugares
+export const hotel = [
+  {
+    name: "Hotel la Pérgola",
+    image:
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/eb/cc/74/piscina.jpg?w=700&h=-1&s=1"
+  },
+  
+  {
+    name: "Hotel HOLIDAY INN",
+    image:
+    "https://digital.ihg.com/is/image/ihg/holiday-inn-managua-4524134884-4x3"
+  },
+  {
+    name: "San Juan del Sur",
+    image:
+    "https://shuvarstours.b-cdn.net/wp-content/uploads/2021/11/San-Juan-del-Sur--1024x576.jpg"
+  },
+  
+]
 
 // usuario de prueba
 export const user = {

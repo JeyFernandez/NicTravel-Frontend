@@ -1,3 +1,4 @@
+import React from 'react';
 import { Entypo, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import CustomText from '../atoms/CustomText';
