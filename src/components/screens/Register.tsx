@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
+import { View, Image, StyleSheet} from "react-native";
 import SignRegister from "../organisms/SingRegister";
 
 import AvoidKeyboard from "../../hooks/AvoidKeyboard";
