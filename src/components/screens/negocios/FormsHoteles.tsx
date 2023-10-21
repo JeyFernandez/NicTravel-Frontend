@@ -4,7 +4,7 @@ import CustomText from "../../atoms/CustomText";
 import Button from "../../molecules/Button";
 import apiConfig from "../../../../api/apiConfig";
 import axios from "axios";
-
+ 
 const FormsHoteles = (): JSX.Element => {
   const [formData, setFormData] = useState({
     name: '',
