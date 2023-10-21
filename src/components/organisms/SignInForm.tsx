@@ -71,7 +71,7 @@ export default SignInForm;
 
 const styles = StyleSheet.create({
   buttonsWrapper: {
-    width: '100%',
+    //width: '100%',
     paddingRight: 10,
     paddingLeft: 10,
     flexDirection: 'row',
