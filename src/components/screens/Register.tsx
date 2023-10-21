@@ -1,3 +1,4 @@
+import React from "react";
 import { View, Image, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
 import SignRegister from "../organisms/SingRegister";
 
