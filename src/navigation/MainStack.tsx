@@ -10,6 +10,8 @@ import Hoteles from "../components/screens/Hotels";
 import HotelPergola from '../components/screens/HotelPergola';
 import Reservation from "../components/screens/Reservation";
 import PaymentForm from "../components/screens/Pay";
+import Bedrooms from "../components/screens/ReserverdRooms";
+import ReservedRooms from "../components/screens/Bedrooms";
 
 const Stack = createNativeStackNavigator();
 
@@ -62,6 +64,20 @@ const MainStack = () => {
         <Stack.Screen
         name="PaymentForm"
         component={PaymentForm}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
+        name="Bedrooms"
+        component={Bedrooms}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
+        name="ReservedRooms"
+        component={ReservedRooms}
         options={{
           headerShown: false
         }}
