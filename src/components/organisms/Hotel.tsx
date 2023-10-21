@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
+import axios from "axios";
+
 import CustomText from "../atoms/CustomText";
 import Input from "../atoms/Input";
 import Button from '../molecules/Button';
 import GetHotel from "../../../api/get/GetHotel"; 
+import apiConfig from "../../../api/apiConfig";
 
 
 const Hotels = (): JSX.Element => {
+  
+  const data = {
+    name: 'AAAAA',
+    description: 'AAAAAA',
+    servises: 'hotel',
+    address: 'AAAAAA',
+    phone: 80808080
+  }
+  const API_BASE_URL = apiConfig.baseURL;
+  const API_KEY = apiConfig.apiKey;
+  
+  async function handlePost() {
+    const response = await axios.post(`http://20.3.3.78:5003/hoteles`, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
+      },
+    })
+      .then((response) => {
+        console.log(response.data);
+      }) 
+      .catch((error) => {
+        console.log(error);
+      })
+
+    console.log(response);
+  } 
 
   return (
     <View style={styles.container}>
@@ -35,7 +65,7 @@ const Hotels = (): JSX.Element => {
         <Input placeHolder="descripción" inputType='text' />
         <Button type="meddium" 
           title="agregar hotel"
-          onClick={alert}  />
+          onClick={() => handlePost()} />
       </View>
     </View>
   );
