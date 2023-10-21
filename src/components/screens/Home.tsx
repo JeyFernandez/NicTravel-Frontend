@@ -1,4 +1,6 @@
+import React from 'react';
 import { ScrollView, StyleSheet, View, Button, Text } from 'react-native';
+
 import Search from "../molecules/Search";
 import Suggestions from '../organisms/Suggestions';
 import CardsSuggestions from "../organisms/CardsSuggestions";

@@ -1,40 +1,30 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-import { hotel } from "../../data/data";
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View, Text, Image, Pressable, FlatList, ScrollView } from "react-native";
 
-interface Props {
-  navigation: any
-}
-
+import GetHotel from '../../../api/get/GetHotel';
 
 const CardsHotels = (): JSX.Element => {
-  const navigation = useNavigation();
-
-  const handleCardsPress = () => {
-    navigation.navigate('HotelPergola')
-  };
-
   return (
-    <View>
-
-      {hotel.map((item, index) => (
-        <View style={styles.cardHotel}>
-
-          <Pressable key={index} style={styles.categoryContainer}
-            onPress={handleCardsPress}
+    <View style={{ flex: 1 }}>
+      <FlatList 
+        data={GetHotel()}
+        renderItem={({ item }) => (
+          <Pressable 
+            style={styles.cardHotel}
+            onPress={() => {alert('aaa')}}
           >
-            <View>
+            <View style={styles.categoryContainer}>
               <Image
-                source={{ uri: item.image }}
+                source={require('../../../assets/logo.png')}
                 style={styles.hotelImage}
               />
-              <Text style={styles.categoryText}>{item.name}</Text>
+              <Text style={styles.categoryText}>
+                {item.name}
+              </Text>
             </View>
           </Pressable>
-
-        </View>
-      ))}
+        )}
+      />
     </View>
   );
 };
@@ -65,6 +55,7 @@ const styles = StyleSheet.create({
     width: 340,
     height: 180,
     borderRadius: 10,
+    borderWidth: 0.2,
   },
   categoryText: {
     marginTop: 10,

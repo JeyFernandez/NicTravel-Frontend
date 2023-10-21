@@ -5,11 +5,11 @@ import LogIn from "../components/screens/LogIn";
 import Register from '../components/screens/Register';
 import BottomTabs from "./BottomTabs";
 import MyBusiness from "../components/screens/MyBusiness";
-import Hoteles from "../components/screens/Hotels";
 
 import HotelPergola from '../components/screens/HotelPergola';
 import Reservation from "../components/screens/Reservation";
 import PaymentForm from "../components/screens/Pay";
+import React from "react";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,13 +34,6 @@ const MainStack = () => {
         <Stack.Screen
           name="MyBusiness"
           component={MyBusiness}
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name="Hoteles"
-          component={Hoteles}
           options={{
             headerShown: false
           }}
