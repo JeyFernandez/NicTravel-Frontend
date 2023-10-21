@@ -23,6 +23,11 @@ const PageNegocios = ({navigation}:Props):JSX.Element =>{
         title='Hotel'
         onClick={()=> navigation.navigate('FormsHoteles')}
         />
+        <Button
+        type='small'
+        title='Multiserivicios'
+        onClick={()=> navigation.navigate('MultiService')}
+        />
         </View>
     </View>
   )
@@ -37,9 +42,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     buttons:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '80%',
-        marginTop: 30
+        marginTop: 20,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        width: '100%',
+        height: 200
     }
 })
