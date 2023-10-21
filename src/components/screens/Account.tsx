@@ -11,9 +11,9 @@ interface AccountProps {
 
 const Account = ({navigation}:AccountProps): JSX.Element => {
 
-  const handleClick = () => { 
 
 
+  const handleClick = () => {
     alert('Estamos trabajando en esta funcionalidad')
   }
   //ir a Places 
