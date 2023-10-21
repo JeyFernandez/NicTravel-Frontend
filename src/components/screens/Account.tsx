@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-
   userPrefile: {
     marginTop: 72,
     borderRadius: 100,
