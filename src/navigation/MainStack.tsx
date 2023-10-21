@@ -14,6 +14,8 @@ import FormsHoteles from "../components/screens/negocios/FormsHoteles";
 import FormsRestaurans from "../components/screens/negocios/FormsRestaurans";
 import PageNegocios from "../components/screens/negocios/PageNegocios";
 import MultiService from "../components/screens/negocios/MultiService";
+import GetRestaurants from "../components/screens/sugerencias/GetRestaurante";
+import Hoteles from "../components/screens/sugerencias/GetHoteles";
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +61,20 @@ const MainStack = () => {
         <Stack.Screen
         name="MultiService"
         component={MultiService}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
+        name="GetRestaurants"
+        component={GetRestaurants}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
+        name="Hoteles"
+        component={Hoteles}
         options={{
           headerShown: false
         }}
