@@ -34,9 +34,9 @@ const Account = ({navigation}:AccountProps): JSX.Element => {
       <View style={styles.BtnMyBusiness}>
         <BtnMyAccount
           type="reserva"
-          title="Peticion prueba"
+          title="Crear Negocio"
           iconicons="arrow-circle-right"
-          onClick={()=> navigation.navigate('Hoteles')}
+          onClick={()=> navigation.navigate('PageNegocios')}
         />
       </View>
 
