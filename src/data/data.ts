@@ -36,27 +36,68 @@ export const hotel = [
   {
     name: "Hotel la Pérgola",
     image:
-    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/eb/cc/74/piscina.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/eb/cc/74/piscina.jpg?w=700&h=-1&s=1",
   },
-  
+
   {
     name: "Hotel HOLIDAY INN",
     image:
-    "https://digital.ihg.com/is/image/ihg/holiday-inn-managua-4524134884-4x3"
+      "https://digital.ihg.com/is/image/ihg/holiday-inn-managua-4524134884-4x3",
   },
   {
     name: "San Juan del Sur",
     image:
-    "https://shuvarstours.b-cdn.net/wp-content/uploads/2021/11/San-Juan-del-Sur--1024x576.jpg"
+      "https://shuvarstours.b-cdn.net/wp-content/uploads/2021/11/San-Juan-del-Sur--1024x576.jpg",
   },
-  
-]
+];
 
 // usuario de prueba
 export const user = {
   name: "Kelly Dayana Mendez",
   email: "kellydayana@gmail.com",
   phoneNumber: "+505 8888-8888",
-  URL:
-    "https://play-lh.googleusercontent.com/_qUtBpMVsGY-CLPx2DreAENHAbr4KHwBGn2w_3jhGSzoRVFRKn0SXUaK0wXSU0SJ7A",
+  URL: "https://play-lh.googleusercontent.com/_qUtBpMVsGY-CLPx2DreAENHAbr4KHwBGn2w_3jhGSzoRVFRKn0SXUaK0wXSU0SJ7A",
 };
+
+export const dataImages = [
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/63/ac/5e/ice-142143610-7425331_3XL-849137.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/64/be/ce/leonardo-5008715-MGAHB_5386156568_O-112888.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/b8/79/b2/ice-89073492-62434071_3XL-983607.jpg?width=720&height=576&crop=true",
+  },
+
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/41/32/54/expediav2-71859-59f127-996336.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/fb/f4/a9/expediav2-115803-f75873-961862.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/0b/42/0f/expediav2-124389-15843e-240937.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/0b/42/0f/expediav2-124389-15843e-240937.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/37/aa/3e/hotelsdotcom-533353-fa752e00_w-608010.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/07/27/f6/expediav2-2294815-1d04ee-172739.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/40/36/de/agoda-2229153-218574204-936945.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/c9/b4/12/hotelsdotcom-489791-96b290a5_w-092284.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/4c/f6/f4/hotelsdotcom-1181856288-1196488c_w-988659.jpg?width=720&height=576&crop=true",
+  },
+  {
+    uri: "https://www.kayak.com.ni/rimg/himg/bc/0c/f0/hotelsdotcom-540137-4850a9f7_w-105274.jpg?width=720&height=576&crop=true",
+  },
+];

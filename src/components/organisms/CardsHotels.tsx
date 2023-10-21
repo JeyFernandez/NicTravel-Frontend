@@ -1,26 +1,30 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, Pressable, FlatList, ScrollView } from "react-native";
-
+import { StyleSheet, View, Text, Image, Pressable, FlatList } from "react-native";
 import GetHotel from '../../../api/get/GetHotel';
+import { dataImages } from '../../data/data';
+
+
 
 const CardsHotels = (): JSX.Element => {
+  const hotels = GetHotel();
+
   return (
     <View style={{ flex: 1 }}>
-      <FlatList 
-        data={GetHotel()}
-        renderItem={({ item }) => (
-          <Pressable 
+      <FlatList
+        data={hotels}
+        renderItem={({ item, index }) => (
+          <Pressable
             style={styles.cardHotel}
-            onPress={() => {alert('aaa')}}
+            onPress={() => {
+              alert('Estamos trabajando en ello');
+            }}
           >
             <View style={styles.categoryContainer}>
               <Image
-                source={require('../../../assets/logo.png')}
+                source={{ uri: dataImages[index % dataImages.length].uri }}
                 style={styles.hotelImage}
               />
-              <Text style={styles.categoryText}>
-                {item.name}
-              </Text>
+              <Text style={styles.categoryText}>{item.name}</Text>
             </View>
           </Pressable>
         )}
