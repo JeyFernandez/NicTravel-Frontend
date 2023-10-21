@@ -5,7 +5,7 @@ import LogIn from "../components/screens/LogIn";
 import Register from '../components/screens/Register';
 import BottomTabs from "./BottomTabs";
 import MyBusiness from "../components/screens/MyBusiness";
-import Hoteles from "../components/screens/Hotels";
+import FormsHoteles from "../components/screens/FormsHoteles";
 
 
 const Stack = createNativeStackNavigator();
@@ -36,8 +36,8 @@ const MainStack = () => {
           }}
         />
         <Stack.Screen
-          name="Hoteles"
-          component={Hoteles}
+          name="FormsHoteles"
+          component={FormsHoteles}
           options={{
             headerShown: false
           }}
