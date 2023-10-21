@@ -10,7 +10,9 @@ import HotelPergola from '../components/screens/HotelPergola';
 import Reservation from "../components/screens/Reservation";
 import PaymentForm from "../components/screens/Pay";
 import React from "react";
-import FormsHoteles from "../components/screens/FormsHoteles";
+import FormsHoteles from "../components/screens/negocios/FormsHoteles";
+import FormsRestaurans from "../components/screens/negocios/FormsRestaurans";
+import PageNegocios from "../components/screens/negocios/PageNegocios";
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +56,20 @@ const MainStack = () => {
           }}
         />
         <Stack.Screen
+        name="FormsRestaurans"
+        component={FormsRestaurans}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
+        name="PageNegocios"
+        component={PageNegocios}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen
         name="Reservation"
         component={Reservation}
         options={{
@@ -74,8 +90,6 @@ const MainStack = () => {
             headerShown: false
           }}
         />
-
-
       </Stack.Navigator>
     </NavigationContainer>
   );

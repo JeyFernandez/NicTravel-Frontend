@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
-import CustomText from "../atoms/CustomText";
-import Button from "../molecules/Button";
-import apiConfig from "../../../api/apiConfig";
+import CustomText from "../../atoms/CustomText";
+import Button from "../../molecules/Button";
+import apiConfig from "../../../../api/apiConfig";
 import axios from "axios";
 
 const FormsHoteles = (): JSX.Element => {
@@ -86,15 +86,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputs: {
-    width: "100%",
+    backgroundColor: "white",
+    paddingVertical: 20,
+    margin:5,
+    borderRadius: 10,
+    marginBottom: 20,
+    width: "95%",
     paddingRight: 10,
     paddingLeft: 10,
     justifyContent: "space-around",
     alignItems: "center",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   input: {
     marginTop: 10,
-    width: "100%",
+    width: "90%",
     height: 54,
     paddingLeft: 10,
     paddingRight: 10,
@@ -108,12 +121,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
-  },
+},
   buttonsWrapper: {
     width: "100%",
     paddingRight: 10,
     paddingLeft: 10,
     justifyContent: "space-around",
     alignItems: "center",
-  },
+  }
 });
