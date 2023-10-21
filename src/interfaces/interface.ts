@@ -18,3 +18,18 @@ export interface users{
   fileName: string,
   image: string,
 }
+export interface Services{
+id : number,
+name: string,
+description: string,
+}
+
+export interface Restaurants{
+  id: number;
+  name: string;
+  description: string;
+  phoneNumber: string;
+  timeOpen: string;
+  timeClose: string;
+  address: string;
+}

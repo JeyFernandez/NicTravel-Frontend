@@ -1,31 +1,31 @@
 import { useEffect, useState } from 'react';
-import { Hotel } from '../../src/interfaces/interface';
+import { Restaurants } from '../../src/interfaces/interface';
 import axios from 'axios';
 import apiConfig from '../apiConfig';
 interface ApiResponse {
   data: {
-    hotels: Hotel[];
+    resturant: Restaurants[];
   };
 }
- function GetHotel() {
-    const [hotelsData, setHotelsData] = useState<Hotel[]>   ([]);
+ function GetRestaurante() {
+    const [restauranteData, setRestauranteData] = useState<Restaurants[]>   ([]);
     useEffect(() => {
       const API_BASE_URL = apiConfig.baseURL;
       const API_KEY = apiConfig.apiKey;
-      axios.get<ApiResponse>(`${API_BASE_URL}hoteles`, {
+      axios.get<ApiResponse>(`${API_BASE_URL}restaurants`, {
         headers: {
           "Authorization": `Bearer ${API_KEY}`,
         },
       })
         .then((response) => {
          
-          setHotelsData(response.data.data.hotels);
+          setRestauranteData(response.data.data.resturant);
         })
         .catch((error) => {
-          console.log(`error al obtener los hoteles: ${error}`);
+          console.log(`error al obtener los restaurantes: ${error}`);
         });
     }, []);
-    return hotelsData;
+    return restauranteData;
 }
 
-export default GetHotel;
+export default GetRestaurante;

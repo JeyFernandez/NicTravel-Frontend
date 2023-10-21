@@ -1,11 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, Pressable, FlatList } from "react-native";
-import GetHotel from '../../../api/get/GetHotel';
-import { dataImages } from '../../data/data';
 
+import GetHotel from '../../../../api/get/GetHotel';
+import { dataImages } from '../../../data/data';
 
-
-const CardsHotels = (): JSX.Element => {
+const Hoteles = (): JSX.Element => {
   const hotels = GetHotel();
 
   return (
@@ -33,7 +32,7 @@ const CardsHotels = (): JSX.Element => {
   );
 };
 
-export default CardsHotels;
+export default Hoteles;
 
 const styles = StyleSheet.create({
   cardHotel: {
