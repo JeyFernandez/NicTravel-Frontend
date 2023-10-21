@@ -24,7 +24,7 @@ name: string,
 description: string,
 }
 
-export interface Resturant{
+export interface Restaurants{
   id: number;
   name: string;
   description: string;
