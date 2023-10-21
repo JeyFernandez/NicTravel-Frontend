@@ -1,40 +1,82 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
 import CustomText from "../atoms/CustomText";
-import Input from "../atoms/Input";
 import Button from "../molecules/Button";
+import apiConfig from "../../../api/apiConfig";
+import axios from "axios";
+
 const FormsHoteles = (): JSX.Element => {
-  interface Props {
-    title: string;
-    type: string;
-    onClick: () => void;
+  const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    services: '',
+    address: '',
+    phone: '',
+  });
+
+  const API_BASE_URL = apiConfig.baseURL;
+  const API_KEY = apiConfig.apiKey;
+
+  const handleChange = (fieldName: string, value: string) => {
+    setFormData({ ...formData, [fieldName]: value });
+  };
+
+  async function handlePost() {
+    try {
+      const response = await axios.post(`${API_BASE_URL}hoteles`, formData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${API_KEY}`,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   return (
     <View style={styles.form}>
       <CustomText type="heading2" text="Formulario de Hoteles" />
       <View style={styles.inputs}>
-        <View style={styles.input}>
-          <Input placeHolder="Nombre del Hotel" inputType="text" />
-        </View>
-        <View style={styles.input}>
-          <Input placeHolder="Descripcion" inputType="text" />
-        </View>
-        <View style={styles.input}>
-          <Input placeHolder="Servicios" inputType="text" />
-        </View>
-        <View style={styles.input}>
-          <Input placeHolder="Direccion" inputType="text" />
-        </View>
-        <View style={styles.input}>
-          <Input placeHolder="Telefono" inputType="text" />
-        </View>
+        <TextInput
+          style={styles.input}
+          placeholder="Nombre"
+          value={formData.name}
+          onChangeText={(text) => handleChange('name', text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Descripción"
+          value={formData.description}
+          onChangeText={(text) => handleChange('description', text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Servicios"
+          value={formData.services}
+          onChangeText={(text) => handleChange('services', text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Dirección"
+          value={formData.address}
+          onChangeText={(text) => handleChange('address', text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Teléfono"
+          value={formData.phone}
+          onChangeText={(text) => handleChange('phone', text)}
+        />
       </View>
       <View style={styles.buttonsWrapper}>
-        <Button title="Guardar" type="meddium" onClick={() => {}} />
+        <Button title="Guardar" type="meddium" onClick={handlePost} />
       </View>
     </View>
   );
 };
+
 export default FormsHoteles;
 
 const styles = StyleSheet.create({
@@ -51,13 +93,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    paddingTop: 10,
+    marginTop: 10,
+    width: "100%",
+    height: 54,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 10,
+    backgroundColor: "white",
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   buttonsWrapper: {
     width: "100%",
     paddingRight: 10,
     paddingLeft: 10,
-    flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
   },
