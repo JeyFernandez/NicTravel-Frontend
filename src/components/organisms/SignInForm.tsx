@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, } from 'react-native';
+import axios from "axios";
 
+import apiConfig from "../../../api/apiConfig";
 import CustomText from "../atoms/CustomText";
 import Input from "../atoms/Input";
 import Button from "../molecules/Button";
@@ -10,23 +12,56 @@ interface Props {
 }
 
 const SignInForm = ({ navigation }: Props): JSX.Element => {
+
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<any>();
+
+  async function chekUserCredentials(email: string, password: any) {
+    await axios.post(`${apiConfig.baseURL}auth/login`, {
+      email: email,
+      password: password,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiConfig.apiKey}`,
+      },
+    })
+      .then((response) => {
+        navigation.navigate('Tabs');
+        console.log(response.data);
+      }) 
+      .catch(() => {
+        alert(`
+          Upss, parece que ha habido un problema con sus credenciales, intentelo nuevamente!
+        `);
+      })
+  }
+
   return (
     <View style={styles.container}>
 
       <CustomText text='Acceder' type='heading2' />
-      <Input placeHolder="correo electrónico o usuario" inputType='email' />
-      <Input placeHolder="contraseña" inputType='password' />
+      <Input 
+        placeHolder="correo electrónico o usuario" 
+        inputType='email' 
+        setState={(email: string) => setEmail(email)}
+      />
+      <Input 
+        placeHolder="contraseña" 
+        inputType='password' 
+        setState={(password: any) => setPassword(password)}
+      />
 
       <View style={styles.buttonsWrapper}>
         <Button
           title='Registrarme'
           type='link'
-          onClick={() => {navigation.navigate('Register')}}
+          onClick={() => navigation.navigate('Register')}
         />
         <Button
           title='Acceder'
           type='meddium'
-          onClick={() => { }}
+          onClick={() => chekUserCredentials(email, password)}
         />
       </View>
     </View>

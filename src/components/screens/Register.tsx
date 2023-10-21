@@ -1,4 +1,5 @@
-import { View, Image, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
+import React from "react";
+import { View, Image, StyleSheet } from "react-native";
 import SignRegister from "../organisms/SingRegister";
 
 import AvoidKeyboard from "../../hooks/AvoidKeyboard";
@@ -12,7 +13,7 @@ const Register = ({ navigation }: Props): JSX.Element => {
     <AvoidKeyboard>
       <View style={styles.container}>
         <Image source={require('../../../assets/logo.png')} />
-        <SignRegister />
+        <SignRegister navigation={navigation} />
       </View>
     </AvoidKeyboard>
   );
