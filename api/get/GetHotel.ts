@@ -8,7 +8,7 @@ interface ApiResponse {
   };
 }
  function GetHotel() {
-    const [hotelsData, setHotelsData] = useState<Hotel[]>([]);
+    const [hotelsData, setHotelsData] = useState<Hotel[]>   ([]);
     useEffect(() => {
       const API_BASE_URL = apiConfig.baseURL;
       const API_KEY = apiConfig.apiKey;

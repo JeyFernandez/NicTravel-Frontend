@@ -1,7 +1,5 @@
-import Hotels from "../organisms/Hotel"
-
 const Hoteles = (): JSX.Element => {
-    return (<><Hotels/></>)
+    return (<>Hotel</>)
 }
 
 export default Hoteles
