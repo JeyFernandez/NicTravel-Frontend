@@ -28,4 +28,4 @@ interface ApiResponse {
     return hotelsData;
 }
 
-export default GetHotel;
+export default GetHotel; 
