@@ -1,17 +1,27 @@
+import React from "react";
 import { TextInput, StyleSheet } from "react-native";
 
 type inputProp = {
   placeHolder: string,
   inputType: string,
+  setState: Function,
 }
 
-const Input = ({ placeHolder, inputType }: inputProp): JSX.Element => {
+const Input = ({ placeHolder, inputType, setState }: inputProp): JSX.Element => {
+
+  /*const handleClick = () => {
+    if(setState) {
+      setState();
+    }
+  }*/
+
   return(
     <TextInput 
       placeholder={placeHolder} 
       style={styles.inputStyles}
       secureTextEntry={inputType === 'password' ? true : false}
       keyboardType={inputType === 'email' ? 'email-address' : 'default'}
+      onChangeText={(key: any) => setState(key)}
     />
   );
 }
