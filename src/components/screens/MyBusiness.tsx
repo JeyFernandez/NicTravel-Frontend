@@ -1,11 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
-import { View,  StyleSheet } from 'react-native';
-=======
 import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { hotel } from '../../data/data';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
->>>>>>> account
 import CustomText from '../atoms/CustomText';
 
 interface Props {
@@ -98,9 +94,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
-<<<<<<< HEAD
- })
-=======
   hotelImage: {
     width: 330,
     height: 180,
@@ -163,4 +156,3 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
 });
->>>>>>> account

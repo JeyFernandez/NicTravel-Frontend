@@ -9,7 +9,6 @@ import MyBusiness from "../components/screens/MyBusiness";
 import HotelPergola from '../components/screens/HotelPergola';
 import Reservation from "../components/screens/Reservation";
 import PaymentForm from "../components/screens/Pay";
-<<<<<<< HEAD
 import React from "react";
 import FormsHoteles from "../components/screens/negocios/FormsHoteles";
 import FormsRestaurans from "../components/screens/negocios/FormsRestaurans";
@@ -17,10 +16,8 @@ import PageNegocios from "../components/screens/negocios/PageNegocios";
 import MultiService from "../components/screens/negocios/MultiService";
 import GetRestaurants from "../components/screens/sugerencias/GetRestaurante";
 import Hoteles from "../components/screens/sugerencias/GetHoteles";
-=======
 import Bedrooms from "../components/screens/ReserverdRooms";
 import ReservedRooms from "../components/screens/Bedrooms";
->>>>>>> account
 
 const Stack = createNativeStackNavigator();
 
