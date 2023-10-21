@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
 import SignRegister from "../organisms/SingRegister";
 
 import AvoidKeyboard from "../../hooks/AvoidKeyboard";
@@ -7,6 +7,7 @@ import AvoidKeyboard from "../../hooks/AvoidKeyboard";
 interface Props {
   navigation: any
 }
+
 
 const Register = ({ navigation }: Props): JSX.Element => {
   return(

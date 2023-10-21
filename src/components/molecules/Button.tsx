@@ -29,7 +29,12 @@ export default Button;
 
 const styles = StyleSheet.create({
   small: {
-
+    height: 48,
+    width: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0EC6A2',
+    borderRadius: 10,
   },
   meddium: {
     height: 48,

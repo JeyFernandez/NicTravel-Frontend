@@ -1,3 +1,4 @@
+import React from 'react';
 import { View,  StyleSheet } from 'react-native';
 import CustomText from '../atoms/CustomText';
 const MyBusiness = ():JSX.Element => {
@@ -15,4 +16,4 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center'
   },
-})
+ })
