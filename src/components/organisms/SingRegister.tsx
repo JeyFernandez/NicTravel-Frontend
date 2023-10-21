@@ -6,7 +6,7 @@ import CustomText from "../atoms/CustomText";
 import Input from "../atoms/Input";
 import Button from "../molecules/Button"
 import apiConfig from "../../../api/apiConfig";
-import PostAuth from "../../../api/post/PostAuth";
+import localStorage from "../../data/LocalStorage";
 
 interface Props {
   navigation: any
@@ -18,6 +18,20 @@ const SignRegister = ({ navigation }: Props): JSX.Element => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<any>();
   const [telefono, setTelefino] = useState<number>(0);
+
+  const handleLocalStoreUserInfo = (
+    name: string, email: string, telefono: number
+  ):void => {
+    localStorage.save({
+      key: 'sesionState',
+      data: {
+        name: name,
+        email: email,
+        telefono: telefono,
+      },
+      expires: 1000 * 3600,
+    });
+  };
 
   async function checkRegistration(name: string, email: string, password: any, tel: number) {
     await axios.post(`${apiConfig.baseURL}users`, {
@@ -35,6 +49,7 @@ const SignRegister = ({ navigation }: Props): JSX.Element => {
         alert(`
           Su usuario '${name}' ha sido creado exitosamente, ahora puede iniciar su sesion
         `);
+        handleLocalStoreUserInfo(name, email, telefono);
         navigation.navigate('LogIn');
       }) 
       .catch(() => {

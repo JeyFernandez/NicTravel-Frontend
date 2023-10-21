@@ -1,24 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Image } from "react-native";
+
+import localStorage from "../../data/LocalStorage";
 import ImageUser from "../atoms/ImageProfile";
 import { user } from '../../data/data';
 import CustomText from '../atoms/CustomText';
 import BtnMyAccount from '../molecules/BtnMyAccount';
 import CardMyVisit from "../organisms/CardMyVisit";
+
 interface AccountProps {
   navigation: any;
 }
 
 const Account = ({navigation}:AccountProps): JSX.Element => {
+
+  const [userData, setUserData] = useState<any>({
+    name: 'Loading...',
+    email: 'Loading...',
+    telefono: 'Loading...'
+  })
+
+  const getUserDataStorage = (): void => {
+    localStorage.load({
+      key: 'sesionState',
+      autoSync: true,
+      syncInBackground: true,
+    })
+      .then((ret: { name: string, email: string, telefono: number }) => {
+        setUserData({ name: ret.name, email: ret.email, telefono: ret.telefono })
+      })
+      .catch((err: { message: any; }) => {
+        console.error(err.message);
+      })
+  }
+
+  useEffect(() => {
+    getUserDataStorage();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.userPrefile}>
-        <ImageUser type="small" uri={user.URL} />
+        <ImageUser type="small" uri={userData.name[0]} />
       </View>
       <View style={styles.infoUsers}>
-        <CustomText type="heading2" text={user.name} />
-        <CustomText type="body2" text={user.email} />
-        <CustomText type="body2" text={user.phoneNumber} />
+        <CustomText type="heading2" text={userData.name} />
+        <CustomText type="body2" text={userData.email} />
+        <CustomText type="body2" text={userData.telefono} />
       </View>
 
       <View style={styles.BtnMyBusiness}>

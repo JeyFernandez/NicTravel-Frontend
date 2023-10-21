@@ -28,7 +28,6 @@ const SignInForm = ({ navigation }: Props): JSX.Element => {
     })
       .then((response) => {
         navigation.navigate('Tabs');
-        console.log(response.data);
       }) 
       .catch(() => {
         alert(`
@@ -42,7 +41,7 @@ const SignInForm = ({ navigation }: Props): JSX.Element => {
 
       <CustomText text='Acceder' type='heading2' />
       <Input 
-        placeHolder="correo electrónico o usuario" 
+        placeHolder="correo electrónico" 
         inputType='email' 
         setState={(email: string) => setEmail(email)}
       />

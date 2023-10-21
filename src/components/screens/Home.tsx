@@ -5,6 +5,8 @@ import Search from "../molecules/Search";
 import Suggestions from '../organisms/Suggestions';
 import CardsSuggestions from "../organisms/CardsSuggestions";
 import CardsHotels from "../organisms/CardsHotels";
+import CustomText from '../atoms/CustomText';
+import ImageUser from '../atoms/ImageProfile';
 
 
 const Home = (): JSX.Element => {
@@ -12,6 +14,12 @@ const Home = (): JSX.Element => {
     <View style={styles.mainContainer}>
 
       <ScrollView style={styles.container}>
+        <View 
+          style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20, alignItems: 'center' }}
+        >
+          <CustomText type='heading2' text='NicTravel' />
+          <ImageUser type="middle" uri={'T'} />
+        </View>
         <Search />
         <Suggestions />
         <CardsSuggestions />
