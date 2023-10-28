@@ -5,7 +5,9 @@ import CustomText from "../atoms/CustomText";
 const Bedrooms = (): JSX.Element => {
     return (
         <ScrollView>
+
             <View style={styles.container}>
+
                 <Text style={styles.headerText}>Habitaciones</Text>
 
                 <View style={styles.price}>
@@ -20,6 +22,8 @@ const Bedrooms = (): JSX.Element => {
 
             <View style={styles.bedrooms}>
                 <CustomText type="body1" text="Permitir Reservar" />
+                <Text style={{ flex: 1 }}>0</Text>
+
             </View>
 
             <View style={styles.bedrooms}>
@@ -35,7 +39,10 @@ const Bedrooms = (): JSX.Element => {
                     <Text>Habitaciones actuales</Text>
                 </View>
             </View>
+            <View style={styles.container}>
 
+            </View>
+            
         </ScrollView>
     );
 };
@@ -66,6 +73,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     bedrooms: {
+        display: "flex",
+        flexDirection: "row",
         height: 70,
         width: 365,
         backgroundColor: 'gray',
